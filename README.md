@@ -68,43 +68,43 @@ Each robot trajectory is converted into a fixed-length vector of **281 engineere
 ### Feature Categories
 
 - **Statistical**  
-  Mean: Average value of a signal. Shows the typical level of movement or force.
-  Standard deviation (std): How much the signal varies around the mean. High std = more variability.
-  Variance: Just the square of std; another measure of variability.
-  Skewness: Measures asymmetry. Is the signal biased toward high or low values?
-  Kurtosis: Measures “peakedness” or whether there are extreme spikes in the signal.
-  RMS (Root Mean Square): Measures the overall magnitude of the signal, similar to energy.
+  - Mean: Average value of a signal. Shows the typical level of movement or force.
+  - Standard deviation (std): How much the signal varies around the mean. High std = more variability.
+  - Variance: Just the square of std; another measure of variability.
+  - Skewness: Measures asymmetry. Is the signal biased toward high or low values?
+  - Kurtosis: Measures “peakedness” or whether there are extreme spikes in the signal.
+  - RMS (Root Mean Square): Measures the overall magnitude of the signal, similar to energy.
 
 Simple, computationally cheap, and give a baseline sense of how the robot is moving or applying forces.
 Even if sampling is low, stats can reveal abnormalities like jitter, drift, or excessive vibrations.
 
 - **Frequency**  
-  FFT (Fast Fourier Transform): Converts a time signal into frequencies. Helps find repeating patterns or oscillations.
-  Welch PSD (Power Spectral Density): Estimates how energy is distributed across frequencies, smoother than plain FFT.
-  Dominant frequencies: The most “active” frequencies—e.g., robot joint shaking at 5 Hz.
-  Band power ratios: Energy in different frequency bands relative to each other. Can indicate whether movement is smooth or jerky.
+  - FFT (Fast Fourier Transform): Converts a time signal into frequencies. Helps find repeating patterns or oscillations.
+  - Welch PSD (Power Spectral Density): Estimates how energy is distributed across frequencies, smoother than plain FFT.
+  - Dominant frequencies: The most “active” frequencies—e.g., robot joint shaking at 5 Hz.
+  - Band power ratios: Energy in different frequency bands relative to each other. Can indicate whether movement is smooth or jerky.
 
 Mechanical faults often show up as vibrations or oscillations.
 Frequency analysis captures hidden periodic issues that time-domain stats might miss.
 
 - **Wavelet**  
-  Discrete Wavelet Transform (db4): Breaks the signal into multiple scales (coarse and fine).
-  Energy features: Measures how much “activity” occurs at each scale.
+  - Discrete Wavelet Transform (db4): Breaks the signal into multiple scales (coarse and fine).
+  - Energy features: Measures how much “activity” occurs at each scale.
 
 Robot signals can have sudden changes or spikes, not just steady patterns.
 Wavelets capture both time and frequency information, unlike FFT which only gives frequency.
 
 - **Temporal**  
-  Autocorrelation: How much the signal resembles itself over time, detects repeating patterns.
-  Linear trend slope: Detects gradual drift in signals (e.g., motor overheating slowly).
-  Zero-crossing rate: How often the signal crosses zero—captures rapid oscillations.
-  Peak counts: Number of sharp peaks—can indicate jerks or impacts.
+  - Autocorrelation: How much the signal resembles itself over time, detects repeating patterns.
+  - Linear trend slope: Detects gradual drift in signals (e.g., motor overheating slowly).
+  - Zero-crossing rate: How often the signal crosses zero—captures rapid oscillations.
+  - Peak counts: Number of sharp peaks—can indicate jerks or impacts.
 
 Capture temporal patterns and trends in robot behavior, important for detecting early anomalies.
   
 - **Cross-Joint**  
-  Velocity correlations: Measures if two joints move together or independently.
-  Coordination metrics: Checks if joint movements follow expected patterns.
+  - Velocity correlations: Measures if two joints move together or independently.
+  - Coordination metrics: Checks if joint movements follow expected patterns.
 
 Faults often disrupt coordination between joints (e.g., one motor lags behind).
 Helps detect system-level issues, not just local sensor anomalies
