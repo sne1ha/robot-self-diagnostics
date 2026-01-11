@@ -159,15 +159,11 @@ Multi-class classification using engineered trajectory features.
 
 ## Experimental Pipeline
 
-Raw Robot Trajectories
-↓
-Preprocessing & Normalization
-↓
-Feature Engineering (281 features)
-↓
-Unsupervised Detection / Supervised Classification
-↓
-Evaluation (F1, Precision, Recall)
+1.  Raw Robot Trajectories
+2. Preprocessing & Normalization
+3. Feature Engineering (281 features)
+4. Unsupervised Detection / Supervised Classification
+5. Evaluation (F1, Precision, Recall)
 
 ## Tech Stack
 
