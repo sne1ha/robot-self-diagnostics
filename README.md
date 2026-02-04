@@ -3,10 +3,6 @@
 
 ## Academic Context
 
-This project was completed as the **final course project** for  
-**Case Studies in Machine Learning (CSML)**  
-**The University of Texas at Austin**
-
 **Full paper:**  
 [Teaching Robots to Predict Their Own Deaths: ML for Self-Diagnostic Manufacturing](https://drive.google.com/file/d/1MuBJ-g9E_FpObhpwWPIR-urV6yzhi7Io/view?usp=sharing)
 
